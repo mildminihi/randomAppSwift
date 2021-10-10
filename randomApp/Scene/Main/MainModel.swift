@@ -8,33 +8,39 @@
 import Foundation
 
 struct MainModel {
-    struct GetMember {
-        struct Request {}
-        
-        struct Response {
-            let memberList: [String]
-        }
-        
-        struct ViewModel {
-            let memberList: [String]
-        }
+  struct GetMember {
+    struct Request {}
+    
+    struct Response {
+      let memberList: [String]
     }
     
-    struct AddMember {
-        struct Request {
-            let name: String
-        }
+    struct ViewModel {
+      let memberList: [String]
+    }
+  }
+  
+  struct AddMember {
+    struct Request {
+      let name: String
+    }
+  }
+  
+  struct AddBulkMember {
+    struct Request {
+      let members: [String]
+    }
+  }
+  
+  struct RandomWinner {
+    struct Request {}
+    
+    struct Response {
+      let winner: String
     }
     
-    struct RandomWinner {
-        struct Request {}
-        
-        struct Response {
-            let winner: String
-        }
-        
-        struct ViewModel {
-            let winner: String
-        }
+    struct ViewModel {
+      let winner: String
     }
+  }
 }
