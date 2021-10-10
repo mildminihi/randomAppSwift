@@ -90,15 +90,15 @@ class MainViewController: UIViewController, MainViewControllerInterface {
     customView.font = UIFont(name: "Helvetica", size: 15)
     alertController.view.addSubview(customView)
     
-    let somethingAction = UIAlertAction(title: "Add Bulk", style: UIAlertAction.Style.default, handler: {(alert: UIAlertAction!) in
+    let addBulkAction = UIAlertAction(title: "Add Bulk", style: UIAlertAction.Style.default, handler: {_ in
       if let members = customView.text {
         self.interactor.addBulkMember(request: MainModel.AddBulkMember.Request(members: members.components(separatedBy: "\n")))
       }
     })
     
-    let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: {(alert: UIAlertAction!) in print("cancel")})
+    let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil)
     
-    alertController.addAction(somethingAction)
+    alertController.addAction(addBulkAction)
     alertController.addAction(cancelAction)
     
     self.present(alertController, animated: true, completion:{})
